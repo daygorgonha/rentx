@@ -1,3 +1,4 @@
+import { Category } from "../../model/Category";
 import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
 
 
