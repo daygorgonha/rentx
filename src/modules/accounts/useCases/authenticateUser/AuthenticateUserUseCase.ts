@@ -2,7 +2,7 @@ import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { compare } from "bcryptjs";
 import  { sign } from "jsonwebtoken";
-import { AppError } from "@errors/AppError";
+import { AppError } from "@shared/errors/AppError";
 
 interface IRequest {
   email: string;
@@ -43,7 +43,7 @@ async execute({ email, password }: IRequest): Promise<IResponse> {
   });
 
   const tokenReturn: IResponse = {
-    token, 
+    token,
     user: {
       name: user.name,
       email: user.email,
@@ -51,7 +51,7 @@ async execute({ email, password }: IRequest): Promise<IResponse> {
   }
 
   return tokenReturn;
-  
+
  }
 }
 
